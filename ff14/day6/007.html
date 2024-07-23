@@ -1,0 +1,55 @@
+3단레이아웃 작성
+nav는 1단 메뉴로
+    home 게시판 회원가입 찾기
+section의 내용은 한글로렌입숨으로 적당히 채워넣으시오
+<html>
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;}
+            nav>ul {list-style: none;}
+            nav li {
+                background-color: #333;
+                display: inline-block;
+                margin-left: -6px;
+                text-align: 40px; 
+                text-align: center;}
+            nav a {
+                display: block;
+                color: #ffffff;
+                text-decoration: none;
+                transition: background-color 0.5s;}
+            nav a:hover {background-color: #575757;}
+            nav {background-color: #333;
+                text-align: center;}
+            #app { width: 800px; margin: 0 auto;}
+            header, nav, footer{ height: 40; background-color: #575757;}
+            aside{ width: 100px; height: 250px; margin: background-color: azure; float: left;}
+            section{ width: 600px; min-height: 600px; background-color: blanchedalmond; float: left;}
+            main { overflow: hidden;}
+            #app { text-align: center;}
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">검색</a></li>
+            </ul>
+        </nav>
+        <div id="app">
+            <header>인천일보아카데미</header>
+            <nav> 메인 메뉴</nav>
+            <main>
+                <aside>left</aside>
+                <section></section>
+                <aside>right</aside>
+            </main>
+            <footer>copyrught &copy;2024 ICIA</footer>
+            </div>
+    </body>
+</html>

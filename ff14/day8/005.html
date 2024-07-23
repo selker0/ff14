@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <button onclick="점등()">점등</button>
+        <img id="img" src="https://www.w3schools.com/js/pic_bulbon.gif">
+        <button onclick="소등()">소등</button>
+        
+        <script>
+            // 불이 켜진 전구 : https://www.w3schools.com/js/pic_bulbon.gif
+            // 불이 꺼진 전구 : https://www.w3schools.com/js/pic_bulboff.gif
+           function 점등() {
+            const img = document.getElementById('img');
+            img.src = 'https://www.w3schools.com/js/pic_bulbon.gif';
+           }
+           function 소등(){
+            const img = document.getElementById('img2');
+            img.src = 'https://www.w3schools.com/js/pic_bulboff.gif';
+           }
+        </script>
+    </body>
+</html>

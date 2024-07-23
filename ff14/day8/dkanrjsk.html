@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .nav {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1.5em; /* 수정: 쉼표(,)가 아니라 점(.)을 사용해야 함 */
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            position: absolute; /* .nav의 position을 여기로 이동 */
+        }
+
+        #parent {
+            position: relative;
+            width: 1000px;
+        }
+
+        #left {
+            left: 0px;
+            top: 175px;
+        }
+
+        #right {
+            right: 0px;
+            top: 175px;
+        }
+
+        .nav:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div class="nav" id="left" onclick="left()">&lt;</div>
+    <img id="photo" src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+    <div class="nav" id="right" onclick="right()">&gt;</div>
+</div>
+
+<script>
+    let index = 0;
+    const photos = ['img_nature_wide.jpg', 'img_snow_wide.jpg', 'img_lights_wide.jpg', 'img_mountains_wide.jpg'];
+    const photoElement = document.getElementById('photo');
+
+    function left() {
+        index--;
+        if (index < 0) {
+            index = photos.length - 1;
+        }
+        photoElement.src = `https://www.w3schools.com/howto/${photos[index]}`;
+    }
+
+    function right() {
+        index++;
+        if (index >= photos.length) {
+            index = 0;
+        }
+        photoElement.src = `https://www.w3schools.com/howto/${photos[index]}`;
+    }
+</script>
+
+</body>
+</html>

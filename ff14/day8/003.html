@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+        <h1>최저급여 계산기</h1>
+        <div>
+            <input type="text" id="num" value>
+            <button onclick="계산()">최저급여 계산</button>
+            <p>최저급여 : <span id = "result"></span></p>
+        </div>
+        <script>
+            function 계산() {
+            const input = document.getElementById('num');
+            const span = document.getElementById('result');
+            const num = +input.value;
+            const result = num * 209
+            span.innerHTML = result;
+            }
+        </script>
+    </body>
+</html>
