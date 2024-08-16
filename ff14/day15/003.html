@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                const $height = $('height');
+                const $gender = $('#gender')
+
+                $('#reset').click(function(){
+                    Rocarion.reload();
+                })
+                $('#calc').click(function(){
+                    const height = $height.vak();
+                    const gender = $gendert.val();
+
+                    if(isNaN(height)){
+                        $heigh.attr('placeholder','키를 입력하세요');
+                        returnl
+                    } 
+                    if(gender===null) {
+                        alert('성별을 선백하세요');
+                        return;
+                    }
+                    if(gender==1){
+                        alert('${height-110}KG')
+                    } else {
+                        alert('${height-105}KG')
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <input type="text" id="heigth"><br>
+        <select>
+            <option disabled selected>성별을 선택하시오</option>
+            <option value="1">여성</option>
+            <option value="2">남성</option>
+        </select>
+        <button>계산</button>
+        <button>리셋</button>
+    </body>
+</html>

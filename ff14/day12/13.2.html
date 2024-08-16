@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <script>
+            // 숫자들을 입력받아 덧셈하는 함수
+            function sum(ar) {
+                let hap = 0;
+                //배열은 object의 일종
+                for(let i=0; i<ar.length; i++){
+                    hap=hap+ar[i];
+                }
+                return hap;
+            }
+
+            // 숫자들을 입력받아 70보다 큰 수만 덧셈하는 함수
+            console.log(sumOver70([70,80,60]));
+
+            function sumOver70(ar) {
+                let hap = 0;
+                for(let i=0; i<ar.length; i++){
+                    if(ar[i]>=70) {
+                        hap = hap+ar[i];
+                    }
+                }
+                return hap;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <h1>남성/여성 적정 체중 계산기</h1>
+        <script>
+        $(document).ready(function(){
+            $('#calc').click(function(){
+                const num = parseFloat($('#num').val());
+                if($('#gender').val()==='여성'){
+                    result = num - 105;
+                } else {
+                    result = num - 110;
+                }
+                $('#result').text(result);
+            });
+            $('#reset').click(function(){
+                $('num').val('');
+            });
+        });
+    </script>
+    </head>
+    <body>
+        <div>
+        키: <input type="num" id="key"><br>
+        성별: <select id="gender">
+            <option id="woman">여성</option>
+            <option id="man">남성</option>
+        </select><br>
+        <p>적정 체중 : <span id='result'></span>kg</p>
+        <button id="calc">계산</button>
+        <button id="reset">리셋</button>
+    </div>
+    </body>
+</html>

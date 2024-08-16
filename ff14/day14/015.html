@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#calc').click(function(){
+                    const num = parseFloat($('#num').val());
+                    if(isNaN(num)){
+                        $num.attr('placeholder','숫자를 입력하세요').forcus();
+                    } else {
+                    const result = num*num;
+                    $('#num2').val(result);
+                    }
+                });
+
+            $('#reset').click(function(){
+                $('#num').val('');
+                $('#num2').val('');
+            });
+        });
+         </script>
+    </head>
+    <body>
+        입력: <input type="text" id="num" >
+        제곱: <input type="text" id="num2" disabled>
+        <button id="calc">계산하기</button>
+        <button id="reset">리셋하기</button>
+    </body>
+</html>

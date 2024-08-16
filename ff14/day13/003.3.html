@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <h1> 70점 합격/불합격</h1>
+        <input type="number" id="jumsu" placeholder="점수 입력">
+        <button id="btn">판정</button>
+        <script>
+            jumsuInput = document.querySelector('#jumsu');
+            btn = document.querySelector('#btn');
+
+            jumsuInput.addEventListener('keydown', function(e){
+                id(e.keyCode===13) 
+                    const jumsu = parseInt(e.target.value);
+                    if(jumsu>=70){
+                    alert('합격');
+                else
+                alert('불합격');
+                }
+            });
+            btn.addEventListener('click', function(){
+                const jumsu = parseInt(jumsuInput.value);
+                if(jumsu>=70)
+                    alert('합격');
+                else
+                alert('불합격');
+            });
+        </script>
+    </body>
+</html>

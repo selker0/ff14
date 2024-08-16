@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        #flex-container>div{
+            float: left;
+            width: 100px;
+            border: 1px solid red;
+        }
+
+        /*clear하는 방법 1 : clear 하지 않고 부모에 높이를 준다(간단. 자식의 높이를 알아야 한다)*/
+        /* #flex-ocntainer {
+            height: 25px;
+        } */
+
+        /*clear하는 방법 2 : float된 요소들의 부모에서 overflow 지정*/
+        #flex-conatiner {
+            overflow: hidden;
+        }
+
+        /*clear하는 방법 3 : float된 요소들의 뒤에 block이 있을 때
+        block요소에서 clear:boat;
+        */
+    </style>
+</head>
+<body>
+    <div>
+        <div id="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div style="background-color: yellow; width: 30px;"></div>
+    </div>
+</body>
+</html>

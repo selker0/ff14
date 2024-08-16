@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>get과 post</title>
+    </head>
+    <body>
+        <!-- 
+        프론트는 표준이지만 다양한 회사가 개발한 수많은 백엔드가 있다
+        프론트와 다양한 백들이 통신하려면 "표준"이 필요하다
+        프론트에서 백으로 데이터를 전송하는 표준을 urlencoded 방식이라고 한다
+         ?username=spring%nai=20
+        het 방식은 urlencoded된 데이터를 주소창을 이용해 서버로 넘긴다(querystring) > 즐겨찾기 가능 > 재실행 가능
+        post방식은 데이터가 나타나지 않는다 > 즐겨찾기 불가능 > 재실행 불가능 > 재실행하지 마라
+        -->
+        <form action="#" method="get">
+            <input type="text" name="username" value="spring">
+            <input type="text" name="nai" value="20">
+            <button>보내기</button>
+        </form>
+<hr>
+        <form action="#" method="post">
+            <input type="text" name="username" value="spring">
+            <input type="text" name="nai" value="20">
+            <button>보내기</button>
+        </form>
+    </body>
+</html>

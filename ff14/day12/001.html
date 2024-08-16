@@ -1,0 +1,24 @@
+<html>
+    <body>
+
+        <script>
+            // JS의 변수는 기본타입과 참조타입으로 나뉜다
+            // 기본타입은 값을 직접 저장한다 (직접 조작)
+            // 참조타입은 객체를 가리키는 리모콘 (간접 조작)
+
+            let a = 10;
+            const b = '홍길동';
+
+            // 객체는 여러가지 값들과 그 값을 다루는 함수들의 집합
+            // JS의 객체에는 사용자 객체와 내장 객체가 있다
+            // 사용자 객체는 변수로 객체를 바로 생성 > 설계도 없이 객체를 바로 생성
+            const today ={
+                year: 2024, month:7, day:29
+            };
+            
+            // 내장 객체 : JS가 설계도를 제공 > 우리는 설계도로 객체를 찍는다
+            const now = new Date();
+            console.log(now.toLocaleDateString()); 
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+              </script>
+            </head>
+    <body>
+        <input type="number" id="put">
+        <script>
+            // jQuery이용
+            // 나이가 25~64세면 입장료가 3천원, 기타는 무료
+            // 나이를 입력하면 입장료를 출력하시오
+            const $put = $('#put');
+            $put.keydown(function(){
+                const put = $put.val();
+                if(e.keyCode===13){
+                if(put>=25 && put<65){
+                    alert('3000원')
+                }else{
+                    alert('무료')
+                }}
+            })
+        </script>
+    </body>
+</html>

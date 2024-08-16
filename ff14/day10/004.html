@@ -1,0 +1,67 @@
+<html>
+    <body>
+        <script>
+            //1 ~ 10사이의 짝수의 합, 홀수의 합을 구해 출력하시오
+
+            /*
+            let one=0;
+            let two=0;
+
+            for(i=0; i<10; i++){
+                if(i%2==0){
+                    one = one+i;
+                } else {
+                    two+=i;
+                }
+            }
+
+            console.log(`${one}`);
+            console.log(`${two}`);
+            */
+
+            //1-2+3-4+5-6+7-8+9-10
+
+            let one =0;
+            for(i=0; i<10; i++){
+            if(i%2==0){
+            one = one+i    
+            } else { one = one-i}
+        }
+
+            console.log(`${one}`);
+
+            // 더한다. 더했으면 다음에 빼고 뺐으면 다음에 더한다
+
+        /*
+            let 합2=0;
+            let 더하기=true;
+            for(let i=1; i<=10; i++){
+                if(더하기==true){
+                    합2 = 합2+i;
+                    더하기 = false
+                } else {
+                    합2 = 합2-i;
+                    더하기 = true;
+                }
+            }
+                */
+
+            // (1-2)+(3-4)+....
+            
+
+            /*
+
+            let 합4=0;
+            for(let i=1; i<=10; i++){
+                합4 = 합4+i;
+                i++;
+                합4 =합4-i;
+            }
+            
+            console.log(합4);
+
+            */
+
+        </script>
+    </body>
+</html>

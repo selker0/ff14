@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <style>
+            #target {
+                background-color: red;
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="target"></div>
+        <button id="btn">클릭하세요</button>
+        <button id="btn2">파랑으로</button>
+        <button id="btn3">나타나기</button>
+        <script>
+            const $btn = $('#tbn');
+            $btn.click(function(){
+                alert('안녕하세요')
+            })
+            const $btn2 = $('#btn2');
+            $btn2.click(function(){
+                $('#target').css('background-color','blue');
+            })
+            const $btn3 = $('btn3');
+            $btn.click(function(){
+                $('#target').css('display','none');
+            })
+        </script>
+    </body>
+</html>

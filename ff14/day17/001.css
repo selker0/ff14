@@ -1,0 +1,58 @@
+<style>
+* {
+    font-family: "Nanum Gothic", sans-serif;
+}
+#app {
+    width: 1000px;
+    margin: 0 auto;
+}
+header,nav,footer {
+    height: 50px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    display: flex;
+}
+aside {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex 배치할 때 내용의 너비를 무시해라
+    보통은 flex를 무시하고 내용 출력을 우선시 하지만 flex-basis를 걸면
+    내용의 너비를 무시하고 flex-grow를 적용시킨다 */
+    flex-basis: 0;
+    flex-grow: 1;
+    background-color: lightgray;
+}
+section {
+    min-height: 600px;
+    flex-basis: 0;
+    flex-grow: 6;
+    border: 1px solid deepskyblue;
+}
+nav>ol {
+    display: flex;
+}
+nav a {
+    display: block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+/*nav li가 hover되면 a를 바꾸라는 뜻*/
+nav li:hover a{
+    background-color: blueviolet;
+    color: white;
+}
+
+.finish {
+    text-decoration: line-through;
+}
+</style>

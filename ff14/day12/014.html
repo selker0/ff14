@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <script>
+            //기본적인 통계 : 합계, 개수, 평균, 최대, 최소
+            // 1. 점수 배열을 파라미터로 받아 70점 이상의 개수를 리턴
+
+            function countOver70(ar){
+                let count = 0;
+                for(let i=0; i<ar.length; i++) {
+                    if(ar[i]>=70) {
+                        count++;
+                    }
+                }
+                return count;
+            }
+
+            //2. 점수 배열을 파라미터로 받아 70점 이상의 평균을 리턴(합계/계수)
+
+            function averageOver70(ar) {
+                let hap = 0;
+                let count = 0;
+                for(let i=0; i<ar.length; i++) {
+                    if(ar[i]>=70) {
+                        hap=hap+ar[i];
+                        count++;
+                    }
+                }
+                return hap/count;
+            }
+        </script>
+    </body>
+</html>

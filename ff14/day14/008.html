@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="target">Hello Javascript</div>
+        <script>
+            const $target = $('#target');
+            // 요소가 가진 내용 : text()
+            console.log($target.text());
+            $target.text('Hello jQuery');
+
+            // 스타일 : scc()
+            console.log($target.css('color'));
+            $target.css('color','red');
+
+            // 글자색은 흰색, 배경은 deeppink, 내용은 안녕하세요 > 메소드 chaining
+            $target.css('color','white').css('background-color','deeppink').text('안녕하세요');
+
+        </script>
+    </body>
+</html>

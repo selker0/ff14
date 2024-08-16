@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- 
+        서버 주소 : http://192.168.0.54.8081/mvc/sum2
+        파라미터 : a,b,c 숫자 3개
+        -->
+        <form action="http://192.168.0.54.8081/mvc/sum2" id="myform">
+            <input type="text" name="a" id="a">
+            <input type="text" name="b" id="b">
+            <input type="text" name="c" id="c">
+            <button type="button" onclick="check();">더하기</button>
+        </form>
+        <script>
+            function check(){
+                const a = $('#a').val();
+                const b = $('#b').val();
+                const c = $('#c').val();
+                if(a==''||b==''||c==''){
+                    alert('숫자들을 모두 입력하세요');
+                    return false;
+                }
+                $('#myform').submit();
+            }
+        </script>
+    </body>
+</html>

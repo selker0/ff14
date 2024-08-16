@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>flex 레이아웃</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            #inline>div, #block>div {
+                width: 100px;
+                border: 1px solid red;
+            }
+            #inline>div { display: inline;}
+        </style>
+    </head>
+    <body>
+        <!--
+        레이아웃 속성이 display
+        inline : 내용만큼 차리. 좌에서 우로 배치
+        block : 한 줄. 위에서 아래로 배치
+        
+        -->
+        <div id="inline">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div id="block">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </body>
+</html>

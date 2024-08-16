@@ -1,0 +1,33 @@
+li<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <title>이벤트 처리하는 두가지 방식</title>
+        <script>
+            $(document).ready(function(){
+                const $ul = $('#parent');
+                $ul.append(`<li class='li'>원래있던 놈<li>`);
+                $ul.append(`<li class='li'>원래있던 놈<li>`);
+
+                    $('#add').click(function(){
+                        $ul.append(`<li class='.li'>새로 추가한 놈'</li>`);
+                    });
+
+                    //ready()할 때 존재하던 놈들은 이벤트이름 메소드가 동작한다
+                    $('.li').click(function(){
+                alert('까꿍');
+            });
+
+            // 정적+동적 요소를 모두 이벤트 핸들링 하려면 on 메소드를 사용
+            // $('이벤트 처리할 요소를 포함하는 요소').on('이벤트 이름','이벤트처리할 요소',funsion(){})
+            $().on('click','.li',function(){
+                alert('나도 나도');
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="add">추가하기</button>
+        <ul id="parent">
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>함수로 html 입력처리</title>
+    </head>
+    <body>
+        <input type="text" id="junsu">
+        <button onclick="panjung()">판정</button>
+        <script>
+            function panjung() {
+                const jumsuElement = document.querySelector('#jumsu');
+                const jumsu = jumsuElement.value;
+                if(jumsu>=70) {
+                    alert('합격입니다');}else { alert('불합격입니다')};
+                }
+        </script>
+    </body>
+</html>

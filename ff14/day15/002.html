@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <select id='month'>
+        </select>
+        <script>
+            // 1월 ~ 12월을 선택할 수 있는 select를 만들어라
+            const month = [
+                {name:'1월', val:1},{name:'2월', val:2},{name:'3월', val:3},
+            ];
+            const $month = $('#month');
+
+            // for(let i=0; i<months.length; i++){}
+            for(const m of month){
+                const html =
+                <option value='${m.val}'>${m.name}</option>;
+                $month.append(html);
+            }
+        </script>
+    </body>
+</html>

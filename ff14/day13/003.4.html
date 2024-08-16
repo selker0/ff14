@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+          </script>
+        </head>
+    <body>
+        <!-- 나이를 입력받아 청소년(24세까지), 성인으로 출력하시오-->
+        <input type="text" id="nai">
+        <button id="btn">계산</button>
+        <script>
+            const nai = document.querySelector('#nai');
+            const btn = document.querySelector('#btn');
+            naiInput.addEventListener('keydown', function(e){
+                const nai = parseInt(e.target.valuee);
+                if(e.keyCode===13)
+                panjung(nai);
+            });
+            btn.addEventListener('click', function(){
+                const nai = parseInt(naiInput.valuee);
+                panjung(nai);
+            });
+
+        function panjung(nai){
+            if(nai>=25)
+            alert("성인");
+        else
+            alert("미성년자");
+        }
+        </script>
+    </body>
+</html>

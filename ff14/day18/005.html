@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <!--
+        서버 주소 : http://192.168.0.54.8081/mvc/user
+        irum       text
+        birthday   date
+
+        둘 모두 입력했으면 서버로 전송
+        -->
+
+        <form action="http://192.168.0.54.8081/mvc/user" id="home">
+            <input type="text" name="irum" id="irum">
+            <input type="date" name="birthday" id="birthday">
+            <button type="button" onclick="put();">전송</button>
+        </form>
+        <script>
+            function put(){
+                const irum = $('#irum').val;
+                const birthday = $('#birthday').val;
+                if(irum==''||birthday==''){
+                    alert('올바른 정보를 입력하시오');
+                    return false;
+                }
+                $('#home').submit;
+            }
+        </script>
+    </body>
+</html>

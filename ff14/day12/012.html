@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <script>
+            // 합격, 불합격을 판정하는 panjung()함수
+            function panjung(jumsu) {
+                // 삼항 연산자     조건? 참일때값 : 거짓일때값
+                return jumsu>=70? '합격':'불합격';
+            }
+
+            function panjung2(jumsu) {
+                if(jumsu>=70) {
+                    return "합격";
+                }
+                return "불합격";
+            }
+
+            const panjung4 = (jumsu)=> {
+                return jumsu>=70? '합격':'불합격';
+            }
+
+            
+            const panjung5 = jumsu=>jumsu>=70? '합격':'불합격';
+            
+            console.log(panjung(70));
+        </script>
+    </body>
+</html>

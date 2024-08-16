@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                const $month = $('#month');
+                const choice = $('#choice');
+
+                // 이벤트가 발생한 곳을 이벤트 핸들러 내부에서 this로 접근할 수 있다
+                $month.change(function(){
+                    console.log($(this).val());
+                });
+
+                $choice.click(function(){
+                    console.log($month.val());
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <select id="month">
+            <option value="1">1월</option>
+            <option value="2">2월</option>
+        </select>
+        <button id="choice">선택</button>
+            <script>
+                console.log();
+                // select에 1월부터 12월까지 나타나도록 해라
+                // 1. 버튼을 클릭하면 선택한 월을 콘솔에 출력하시오
+                // - 이벤트 발생 : 버튼 -> select
+                // - 어떤 이벤트
+                //      버튼 : select에서 선택하고 버튼을 클릭
+                //      select로 직접 처리하겠다 > change 이벤트
+                // 
+            </script>
+    </body>
+</html>
