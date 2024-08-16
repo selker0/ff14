@@ -1,0 +1,59 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+      const url = 'https://sample.bmaster.kro.kr/contacts';
+      const PAGE_SIZE = 10;
+      let pageno = location.search.substr(8);
+      if(pageno=="")
+        pageno="1";
+
+      function fetchApi(pagesize, pageno) {
+        const data = {pagesize, pageno};
+
+        // 아이디 사용여부, 이메일 사용여부, 세번째 조건 -> 회원가입
+        // 자바스크립트 비동기 프로그래밍에서 콜백 지옥이 발생
+        $.ajax({
+          아이디사용여부주소, 
+          success(response) {
+            $.ajax({
+              이메일사용여부주소,
+              success(response) {
+                $.ajax({
+                  세번째주소,
+                  success(response) {
+                    회원가입(),
+                  }, error(response) {
+                    console.log(response);
+                  }
+                })
+              }, error(response) {
+                console.log(response);
+              }
+            })
+          }, error(response) {
+            console.log(response);
+          }
+        })
+
+        // try 내부 코드에서 오류가 발생하면 catch로 이동(오류객체가 전달된다)
+        try {
+          const a = await $.ajax(아이디사용여부);
+          const b = await $.ajax(이메일사용여부);
+          const c = await $.ajax(세번째조건);
+          if(a==true && b==true && c==true) 
+            회원가입();
+          }
+        } catch(err) {
+          console.log(err);
+        }
+    </script>
+    <ul>
+      <li><a href="list.html?pageno=1">1</a></li>
+      <li><a href="list.html?pageno=2">2</a></li>
+      <li><a href="list.html?pageno=3">3</a></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+one = "hello"
+two = "python"
+
+print(one+'! '+two)
+
+one1 = 'python '
+two2 = 'java '
+
+print((one1 + two2) * 4)
+
+license_plate = "24가 2210"
+print(license_plate[4:8])
+
+string = "홀짝홀짝홀짝"
+print(string[0]*3)
+
+string1 = "PYTHON"
+print(string1[::-1]) # >역순으로 문자열을 가져옴
+
+phone_number = "010-1111-2222"
+print(phone_number[0:3] + phone_number[4:8] + phone_number[10:13]) # +로 붙힐 수 있음
+# phone_number.split("-") > -단위로 끊어서 읽음
+# lst = phone_number로 바꿔서 위와 같이 쓸 수도 있음. lst[0] lst[1] lsr[2]로 사용
+
+string2 = 'abcd'
+b = "A" + string2[1:]
+print(b)
+# 새로운 함수를 사용해서 a를 A로 바꿔서 풀면 됨
+# print(string2.capitalize()) <도 사용 가능
+
+string3 = "국어 영어 수학 과학 경제 지리 물리 화학 생물"
+print(string3[0:2])
+print(string3[3:5])
+print(string3[6:8])
+print(string3[9:11])
+print(string3[12:14])
+print(string3[15:17])
+print(string3[18:20])
+print(string3[21:23])
+print(string3[24:26])
+
+#lst = string.split[' '] < 로 쪼개서
+# for element in lst :
+#   print(element) < 이렇게도 가능
