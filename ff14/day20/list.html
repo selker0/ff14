@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <table class="table table-hover">
+            <thead>
+                <td>이름</td><td>주소</td><td>연락처</td>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+        <ul class="pagination">
+        </ul>
+
+        <script>
+            // 이름을 대문자로 적는 건 상수라는 의미
+            const url = 'https://sample.bmaster.kro.kr/contacts';
+            const pagesize = 10;
+
+            // 문자열 메소드는 원본을 변경하지 않는다 > 리턴 받아야 한다
+            // ?pageno=11
+            let pageno = location.search.substr(8);
+            if(pageno=="")
+            pageno="1";
+
+            function printContacts(contacts){
+                const $tbody = $('#tbody');
+                $tbody.empty();
+                for(const c of contacts){
+                    const row = `
+                    <tr>
+                        <td><a href="${'read.html?no='+c.no}">${c.name}</a></td>
+                        <td>${c.address}</td>
+                        <td>${c.tel}</td>
+                        </tr>
+                        `;
+                        $tbody.append(row);
+                }
+            }
+
+            function calcPagenation({totalcount}){
+                const 페이지의연락처개수 = 10;
+                const 블록의페이지개수 = 5;
+                const 총페이지수 = Math.ceil(totalcount/페이지의연락처개수);
+                const prev = (Math.ceil(pageno/블록의페이지개수)-1)*블록의페이지개수;
+                const start = prev + 1;
+                let end = prev + 블록의페이지개수;
+                let next = end +1;
+
+                // 3벌째 블록일 경우 prev:10, start:11, end:15, next:16이 나온다
+                // 그런데 총페이지수가 14라면 end는 14로, next는 0으로
+                if(end>=총페이지수) {
+                    end = 총페이지수;
+                    next = 0;
+                }
+                return { prev, start, end, next };
+            }
+
+            function printPagination({prev, start, end, next}) {
+                const $pagination = $('.pagination');
+                if(prev>0) {
+                    const prevPage = `<li class="page-item"><a class="page-link" href="list.html?pageno=${prev}">이전으로</a></li>`
+                    $pagination.append(prevPage);
+                }
+                for(let i=start; i<=end; i++) {
+                    const page = `<li class="page-item"><a class="page-link" href="list.html?pageno=${i}">${i}</a></li>`;
+                    $pagination.append(page);
+                }
+                if(next>0) {
+                    const nextPage = `<li class="page-item"><a class="page-link" href="list.html?pageno=${next}">다음으로</a></li>`
+                    $pagination.append(nextPage);
+                }
+            }
+
+            async function fetchApi(){
+        
+            // 구조분해할당 : 변수들을 모아서 객체를 쉽게, 객체를 변수들로 쉽게 풀어헤치기
+            // {pageno:pageno, pagesize:pagesize}
+            const data = {pageno, pagesize};
+
+            // 비동기 작업의 결과는 현재 몰라 > 미래에 값이 도착할 것이다  > Promise
+            try {
+            const result = await $.ajax({url, data});
+            printContacts(result.contacts);
+            const pagenation = calcPagenation(result);
+            printPagination(pagenation);
+        } catch(error){ // success 영역
+            console.log(error);
+            }
+        }
+
+        fetchApi();
+
+        </script>
+    </body>
+    <!-- 
+    구조분해할당 : 변수들을 모아서 객체를 만든다
+    const a = 10;
+    const b = 20;
+    const obj = {a,b};
+
+    구조분해할당 : 객체를 변수들로 분해한다
+    const obj2 = {itum:'홍길동',nai:20}
+    const {irum, nau} = obj2;
+    -->
+</html>
