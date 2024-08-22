@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        {% if message %}
+            alert('{{message}}')
+            // 서버에 있는 area의 값을 여기서 변경한다
+        {% endif %}
+    </script>
+</head>
+<body>
+    {% if area and area>=100 %}
+        <div style="color:red">반지름 {{radius}} 일 때 면적은 {{area}}</div>
+    {% elif area and area<100 %}
+    <div style="color:blue">반지름 {{radius}} 일 때 면적은 {{area}}</div>
+    {% endif %}
+ </body>
+</html>

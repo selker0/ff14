@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+        {% if message %}
+            alert('{{message}}')
+       {% endif %}
+        </script>
+    </head>
+    <body>
+        <!--
+        {[square]} : square를 html에 출력해라 > 이 경우 값이 없으면 아무것도 안 찍는다
+        {% if square>=100% : square를 100과 비교 > square가 없으면 오류 발생}
+        if square and square>=100 : square가 존재하고 100이상이라면
+        -->
+        {% if square and square>=100%}
+            <div style="color:red">{{square}}</div>
+        {%elif square and square<100%}
+            <div style="color:blue">{{square}}</div>
+        {% endif %}
+    </body>
+</html>

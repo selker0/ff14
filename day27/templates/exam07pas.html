@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            const message = '{{message}}'
+            if(message!='')
+              alert(message)
+        </script>
+    </head>
+    <body>
+        {% if result and result>=70 %}
+        <div style="color:blue;">합격</div>
+        {% elif result and result<70 %}
+        <div style="color:red;">불합격</div>
+        {% endif %}
+    </body>
+</html>
